@@ -21,7 +21,7 @@ type EventsController struct {
 func CreateEventsController() *EventsController {
 	return &EventsController{
 		eventDb: db.GetEventsDB(),
-		geoipDB: db.GetGeoIPDB(),
+		// geoipDB: db.GetGeoIPDB(),
 	}
 }
 

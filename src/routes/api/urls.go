@@ -22,7 +22,7 @@ func UrlsRoute() func(router fiber.Router) {
 
 	return func(router fiber.Router) {
 		router.Get("/", getAllUrls)
-		router.Post("/", security.MandatoryJwtAuthMiddleware, createRandomUrl)
+		router.Post("/", createRandomUrl)
 		router.Put("/:shortcode", security.MandatoryJwtAuthMiddleware, createSpecificUrl)
 	}
 }

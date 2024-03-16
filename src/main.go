@@ -21,7 +21,7 @@ func main() {
 	// Initialize the database
 	appDb := db.GetAppDB()
 	eventDb := db.GetEventsDB()
-	geoipDb := db.GetGeoIPDB()
+	// geoipDb := db.GetGeoIPDB()
 
 	// Create the app
 	adminApp := server.CreateAdminApp()
@@ -60,7 +60,7 @@ func main() {
 
 		lo.Must0(lo.Must(appDb.DB()).Close())
 		lo.Must0(lo.Must(eventDb.DB()).Close())
-		lo.Must0(geoipDb.Close())
+		// lo.Must0(geoipDb.Close())
 
 		lo.Must0(adminApp.ShutdownWithContext(ctx))
 		lo.Must0(mainApp.ShutdownWithContext(ctx))

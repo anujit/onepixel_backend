@@ -19,9 +19,9 @@ func UsersRoute() func(router fiber.Router) {
 	usersController = controllers.CreateUsersController()
 
 	return func(router fiber.Router) {
-		router.Post("/", security.MandatoryAdminApiKeyAuthMiddleware, registerUser)
+		router.Post("/", registerUser)
 		router.Post("/login", loginUser)
-		router.Get("/:userid", security.MandatoryJwtAuthMiddleware, getUserInfo)
+		router.Get("/:userid", getUserInfo)
 		router.Patch("/:userid", security.MandatoryJwtAuthMiddleware, updateUserInfo)
 	}
 }
